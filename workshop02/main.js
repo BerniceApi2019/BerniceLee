@@ -113,6 +113,28 @@ app.get(
 
 
 // TODO POST /api/city
+// application/x-www-form-urlencoded - body
+app.post(
+	'apicity',
+
+	(req, resp) => {
+		cont data = req.body;
+		console.info('>> data: ' , data);
+
+		db.insertCity(data)
+		.then(result => {
+
+		resp.status(201)
+		resp.type('application/json')
+		resp.json({message: 'added'});
+
+	})
+	.catch(error => {
+		resp.status(400);
+		resp.type('text/plain');
+		resp.send(error);
+	})
+)
 
 
 
