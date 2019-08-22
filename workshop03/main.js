@@ -44,7 +44,6 @@ new OpenApiValidator(
 ).install(app);
 
 
-
 // Start of workshop
 // TODO 2/2 Copy your routes from workshop02 here
 
